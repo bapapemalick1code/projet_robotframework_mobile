@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230712 16:44:19.887" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\Users\monsh\PycharmProjects\occazio_app\Tests">
+<suite id="s1-s1" name="homeTest" source="C:\Users\monsh\PycharmProjects\occazio_app\Tests\homeTest.robot">
+<test id="s1-s1-t1" name="Onboarding" line="13">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>base.Start Appium</arg>
+<arg>AND</arg>
+<arg>base.Occasio app</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Start Appium" library="base">
+<kw name="Start Process" library="Process">
+<arg>C:/Users/monsh/AppData/Roaming/npm/appium.cmd</arg>
+<arg>-p 4723</arg>
+<doc>Starts a new process on background.</doc>
+<msg timestamp="20230712 16:44:20.152" level="INFO">Starting process:
+C:/Users/monsh/AppData/Roaming/npm/appium.cmd "-p 4723"</msg>
+<status status="PASS" starttime="20230712 16:44:20.151" endtime="20230712 16:44:20.162"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Started</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 16:44:20.162" endtime="20230712 16:44:20.164"/>
+</kw>
+<status status="PASS" starttime="20230712 16:44:20.151" endtime="20230712 16:44:20.164"/>
+</kw>
+<kw name="Occasio app" library="base">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${Hub}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230712 16:44:25.833" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230712 16:44:25.833" endtime="20230712 16:44:25.856"/>
+</kw>
+<msg timestamp="20230712 16:44:25.856" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230712 16:44:25.857" level="FAIL">ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Une connexion existante a dû être fermée par l’hôte distant', None, 10054, None))</msg>
+<status status="FAIL" starttime="20230712 16:44:20.165" endtime="20230712 16:44:25.859"/>
+</kw>
+<status status="FAIL" starttime="20230712 16:44:20.165" endtime="20230712 16:44:25.859"/>
+</kw>
+<status status="FAIL" starttime="20230712 16:44:20.151" endtime="20230712 16:44:25.860"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230712 16:44:25.860" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230712 16:44:25.860" endtime="20230712 16:44:25.861"/>
+</kw>
+<msg timestamp="20230712 16:44:25.862" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230712 16:44:25.862" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230712 16:44:25.860" endtime="20230712 16:44:25.862">No application is open</status>
+</kw>
+<tag>test_002</tag>
+<status status="FAIL" starttime="20230712 16:44:20.150" endtime="20230712 16:44:25.862">Setup failed:
+ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Une connexion existante a dû être fermée par l’hôte distant', None, 10054, None))
+
+Also teardown failed:
+No application is open</status>
+</test>
+<status status="FAIL" starttime="20230712 16:44:20.141" endtime="20230712 16:44:25.864"/>
+</suite>
+<status status="FAIL" starttime="20230712 16:44:19.890" endtime="20230712 16:44:25.865"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">test_002</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="homeTest">Tests.homeTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230712 16:44:25.856" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230712 16:44:25.862" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>
