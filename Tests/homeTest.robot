@@ -7,7 +7,7 @@ Resource        ../Resources/base.robot
 *** Test Cases ***
 Demarrage
   [Tags]        test_001
-  Navigate.Unboarding
+  Navigate.Onboarding
   #Messagerie.Inscription    ${Username}
 
 
