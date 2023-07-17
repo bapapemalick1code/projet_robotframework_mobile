@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230717 17:35:44.027" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\Users\monsh\PycharmProjects\occazio_app\Tests">
+<suite id="s1-s1" name="homeTest" source="C:\Users\monsh\PycharmProjects\occazio_app\Tests\homeTest.robot">
+<test id="s1-s1-t1" name="Demarrage" line="8">
+<kw name="Run Keyword" library="BuiltIn" type="SETUP">
+<arg>Launch App Browserstack</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Launch App Browserstack" library="base">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION_BROWSERSTACK}</arg>
+<arg>deviceName=${ANDROID_DEVICENAME_BROWSERSTACK}</arg>
+<arg>app=${ANDROID_APP_BROWSERSTACK}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" starttime="20230717 17:36:06.621" endtime="20230717 17:36:06.621"/>
+</kw>
+<msg timestamp="20230717 17:36:06.622" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<status status="FAIL" starttime="20230717 17:35:44.175" endtime="20230717 17:36:06.623"/>
+</kw>
+<status status="FAIL" starttime="20230717 17:35:44.175" endtime="20230717 17:36:06.623"/>
+</kw>
+<status status="FAIL" starttime="20230717 17:35:44.175" endtime="20230717 17:36:06.623"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230717 17:36:06.624" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230717 17:36:06.624" endtime="20230717 17:36:06.633"/>
+</kw>
+<msg timestamp="20230717 17:36:06.634" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230717 17:36:06.635" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230717 17:36:06.623" endtime="20230717 17:36:06.635">No application is open</status>
+</kw>
+<tag>test_001</tag>
+<status status="FAIL" starttime="20230717 17:35:44.174" endtime="20230717 17:36:06.635">Setup failed:
+Execution terminated by signal
+
+Also teardown failed:
+No application is open</status>
+</test>
+<status status="FAIL" starttime="20230717 17:35:44.163" endtime="20230717 17:36:06.636"/>
+</suite>
+<status status="FAIL" starttime="20230717 17:35:44.029" endtime="20230717 17:36:06.638"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">test_001</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="homeTest">Tests.homeTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230717 17:36:06.622" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<msg timestamp="20230717 17:36:06.634" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>
