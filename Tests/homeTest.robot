@@ -8,6 +8,7 @@ Resource        ../Resources/base.robot
 Demarrage
   [Tags]        test_001
   Navigate.Onboarding
+  #Close Application
   #Messagerie.Inscription    ${Username}
 
 

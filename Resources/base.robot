@@ -5,13 +5,14 @@ Library         OperatingSystem
 Library         Process
 Library         String
 
+
+
 *** Variables ***
-${APPIUM_COMMAND}    appium -p 4723
+${APPIUM_COMMAND}    appium -p ${AppiumPort}
 
 *** Keywords ***
 Start Appium
     Run And Return Rc   ${APPIUM_COMMAND}
-    #Start Process    appium -p 4723
     Log To Console       Started
 
 #Start Appium
@@ -25,13 +26,12 @@ Start Appium
     #Start Process   ${userprofile}/AppData/Roaming/npm/appium.cmd  -p 4723
     #Log To Console       Started
 
-
 Stop Appium
-    [Documentation]    Stops the running Appium server on port 4723
+    [Documentation]    Arrêter appium server
     Run And Return Rc     taskkill /F /IM node.exe
 
-
 Launch App
+  [Documentation]    Lancer App en Local
   Open Application
   ...    ${Hub}
   ...    automationName=${ANDROID_AUTOMATION_NAME}
@@ -39,6 +39,27 @@ Launch App
   ...    platformVersion=${ANDROID_PLATFORM_VERSION}
   ...    app=${ANDROID_APP}
   #...  noReset=true
+
+Launch App Browserstack
+  [Documentation]    Lancer App dans BrowserStack
+  Open Application
+  ...    ${REMOTE_URL}
+  ...    automationName=${ANDROID_AUTOMATION_NAME}
+  ...    platformName=${ANDROID_PLATFORM_NAME}
+  ...    platformVersion=${ANDROID_PLATFORM_VERSION_BROWSERSTACK}
+  ...    deviceName=${ANDROID_DEVICENAME_BROWSERSTACK}
+  ...    app=${ANDROID_APP_BROWSERSTACK}
+
+
+Launch App Browserstack In Parallel
+  [Documentation]    Lancer App dans BrowserStack sur plusieurs devices en parallèle
+  Open Application
+  ...    ${REMOTE_URL}
+  ...    automationName=${ANDROID_AUTOMATION_NAME}
+  ...    platformName=${ANDROID_PLATFORM_NAME}
+  ...    deviceName=${bs_device}
+  ...    app=${ANDROID_APP_BROWSERSTACK}
+  ...    build=RobotFramework   #les tests seront regroupés dans un build depuis browserstack avec le nom Robotframework
 
 
 Close App
